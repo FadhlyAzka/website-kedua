@@ -1,0 +1,57 @@
+<div class="inner-toolbar">
+    <button class="tab-btn active" onclick="switchTab('stories')">Stories</button>
+    <button class="tab-btn" onclick="switchTab('art')">Artworks</button>
+</div>
+
+<div id="stories" class="tab-content active" style="display: block;">
+    <div class="list-view">
+        <div class="news-header-area">
+            <h3>Latest Released Stories</h3>
+        </div>
+
+        <div class="news-card" onclick="window.open('https://file.notion.so/f/f/5e0eef7c-2129-435a-b20a-7eeeec63f851/eb3626b2-a65e-41fa-ab47-03b7408963dd/Unsur_Teguh_Edar_Ambisi_versi_Novel.pdf?table=block&id=2db97005-beea-8038-8c4d-cce02020e5de&spaceId=5e0eef7c-2129-435a-b20a-7eeeec63f851&expirationTimestamp=1767276000000&signature=o_kVs7F9MhUZ_eGjeQpSM8WcWKz7YvoHQaK2wkLun-s&downloadName=Unsur+Teguh+Edar+Ambisi+versi+Novel.pdf', '_blank')">
+            <div class="news-info">
+                <span class="news-title">Unsur Teguh Edar Ambisi</span>
+                <span class="news-date">2 Des, 2025</span>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+    
+    <div class="detail-view" style="display: none;">
+        <button class="back-btn" onclick="showNewsList(this)">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        
+        <div class="article-placeholder"></div>
+    </div>
+</div>
+
+<div id="art" class="tab-content" style="display: none;">
+    <div class="news-header-area">
+        <h3>Design</h3>
+    </div>
+    <div class="art-collection">
+        <div class="art-preview" onclick="openGallery('artworks/STP - Sq - 1.jpg', '<i>Gaslighting</i> untuk Slay The Princess')">
+            <img src="artworks/STP - Sq - 1.jpg">
+        </div>
+        <div class="art-preview" onclick="openGallery('artworks/STP - Sq - 2.jpg', '<i>Plan Your Choice</i> untuk Slay The Princess')">
+            <img src="artworks/STP - Sq - 2.jpg">
+        </div>
+        <div class="art-preview" onclick="openGallery('artworks/STP - Sq - 3.jpg', '<i>Forceful Joy</i> untuk Slay The Princess')">
+            <img src="artworks/STP - Sq - 3.jpg">
+        </div>
+    </div>
+    
+    <div class="news-header-area">
+        <h3>Art in General</h3>
+    </div>
+    <div class="art-collection">
+        <div class="art-preview" onclick="openGallery('artworks/A Lighthouse.jpg', '<i>Coming to A Lighthouse</i>')">
+            <img src="artworks/A Lighthouse.jpg">
+        </div>
+        <div class="art-preview" onclick="openGallery('artworks/sunflower.jpg', '<i>PVZ Sunflower</i>')">
+            <img src="artworks/sunflower.jpg">
+        </div>
+    </div>
+</div>    

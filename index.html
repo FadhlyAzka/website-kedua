@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latezverse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div id="desktop">
+        <iframe src="screen.html" class="screen-frame" title="Screen"></iframe>
+    </div>
+
+    <div id="dynamic-window" class="window">
+        <div class="window-header">
+            <span id="window-title"><i class="fas fa-file"></i> System File</span>
+            <span class="close-btn" onclick="closeWindow('dynamic-window')">✕</span>
+        </div>
+        <div id="dynamic-content" class="window-content">
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <div id="start-menu">
+        <div class="menu-item" onclick="loadExternalContent('window_about.html', 'About Me', 'fa-id-card');">
+            <i class="fas fa-id-card"></i> Account
+        </div>
+        <div class="menu-item" onclick="loadExternalContent('window_blog.html', 'Personal Blog', 'fa-user-pen');">
+            <i class="fas fa-user-pen"></i> Personal Blog
+        </div>
+        <div class="menu-item" onclick="loadExternalContent('window_news.html', 'News', 'fa-newspaper');">
+            <i class="fas fa-newspaper"></i> News
+        </div>
+        <div class="menu-item" onclick="loadExternalContent('window_files.html', 'Files', 'fa-folder');">
+            <i class="fas fa-folder"></i> Files
+        </div>
+        <div class="menu-item" onclick="loadExternalContent('window_contact.html', 'Contact', 'fa-envelope');">
+            <i class="fas fa-envelope"></i> Contact
+        </div>
+        <div class="menu-item" onclick="loadExternalContent('window_music.html', 'Music Player', 'fa-music');">
+            <i class="fas fa-music"></i> Music
+        </div>
+        <div class="menu-item" onclick="loadExternalContent('window_settings.html', 'Settings', 'fa-cog')">
+            <i class="fas fa-cog"></i> Settings
+        </div>
+        <div class="menu-item" onclick="initiateShutdown()">
+            <i class="fas fa-sign-out-alt"></i> Quit
+        </div>
+    </div>
+
+    <div id="window-quit" class="window">
+        <div class="window-header">
+            <span><i class="fas fa-sign-out-alt"></i> System Shutdown</span>
+        </div>
+        <div class="window-content" style="text-align: center;">
+            <p style="margin-top: 20px; color: var(--text-caption-color)">Thank you for visiting my website. Do we will meet again?<br/><br/>
+            <span id="quit-message" style="font-size: 1.2rem; font-weight: bold; color: var(--text-caption-color)">¯\_(ツ)_/¯ Well... I hope not</span></p>
+            
+            <div style="width: 100%; background: #eee; height: 10px; margin-top: 70px; border-radius: 5px; overflow: hidden;">
+                <div id="quit-timer-bar" style="width: 100%; height: 100%; background: var(--color-main); transition: width 2s linear;"></div>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--color-main); margin-top: 10px;">Terminating Session...</p>
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <div id="start-btn" onclick="toggleMenu()">
+            <i class="fas fa-building"></i>
+        </div>
+        <div id="clock">12:00 PM</div>
+    </div>
+
+    <div id="gallery-modal" class="modal-overlay" onclick="closeGallery()">
+        <div class="modal-container">
+            <img id="modal-img" src="" alt="Full size">
+            <div id="modal-caption"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

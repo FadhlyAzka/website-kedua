@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/* Scope all music styles under .container to avoid global side-effects */
+.container, .container * {
+    box-sizing: border-box;
+}
+.container {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+}
+.container .background{
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+}
+.container .background img{
+    position: absolute;
+    margin: auto;
+}
+.container .player-img{
+    width: 200px;
+    height: 200px;
+    margin: 8px auto;
+    position: relative;
+}
+.container .player-img img{
+    object-fit: cover;
+    border-radius: 20px;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+}
+.container .player-img:hover img{
+    transform: translateY(-4px);
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.5);
+}
+.container .player-img img.active{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    opacity: 1;
+}
+.container h2{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--text-caption-color);
+    margin: 8px 0 0;
+}
+.container h3{
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--text-caption-color);
+    margin: 6px 0 0;
+}
+.container .player-progress{
+    background-color: var(--color-100);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 12px 10px 8px;
+    height: 6px;
+    width: calc(100% - 20px);
+}
+.container .progress{
+    background-color: var(--color-dark);
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+.container .music-duration{
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-caption-color);
+    margin: 6px 10px 0;
+}
+.container .player-controls{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 8px 0 6px;
+}
+.container .fa-solid {
+    font-size: 25px;
+    position: relative;
+    top: 10px;
+    color: var(--color-dark);
+    margin-right: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+.container .fa-solid:hover{
+    filter: brightness(40%);
+}
+/* layout: content area holds player and playlist side-by-side */
+.content{
+    display: flex;
+    gap: 12px;
+    flex: 1 1 auto;
+    align-items: flex-start;
+}
+.container .content{
+    display: flex;
+    gap: 12px;
+    flex: 1 1 auto;
+    align-items: flex-start;
+}
+.container .player-panel{
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.container .playlist {
+    width: 260px;
+    margin: 0;
+    max-height: 280px;
+    overflow-y: auto;
+    border-left: 1px solid var(--color-100);
+    padding-left: 12px;
+}
+.container .playlist ul {
+    color: var(--text-caption-color);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.container .playlist li {
+    padding: 8px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.container .playlist li:hover {
+    background: var(--color-100);
+}
+.container .playlist li.active {
+    background: var(--color-200);
+    font-weight: bold;
+    color: var(--color-deep);
+}

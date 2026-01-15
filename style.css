@@ -1,0 +1,342 @@
+/* -- COLOR PALETTE -- */
+:root {
+    /* Evening Sunset (Default Pink) */
+    --text-caption-color: #2a2a2a;
+    --text-button-color: #fff;
+    --icon-change-color: #2a2a2a;
+    --bg-overlay: rgba(255, 240, 245, 0.95);
+    --color-100: #fce4ec;
+    --color-200: #f8bbd0;
+    --color-main: #e91e63;
+    --color-dark: #d81b60;
+    --color-deep: #880e4f;
+    --color-glass: rgba(233, 30, 99, 0.1);
+}
+
+[data-theme="yellow"] {
+    --text-caption-color: #fff;
+    --text-button-color: #4a4c40;
+    --icon-change-color: #e5dd03;
+    --bg-overlay: rgba(104, 106, 81, 0.95);
+    --color-100: #434343;
+    --color-200: #f8fcb3;
+    --color-main: #f4f403;
+    --color-dark: #e5dd03;
+    --color-deep: #9b9801;
+    --color-glass: rgba(213, 223, 30, 0.1);
+}
+
+/* --- RESET & BASICS --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    color: var(--bg-overlay);
+    user-select: none; /* Game-like feel */
+}
+
+/* --- BACKGROUND --- */
+#desktop {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: calc(100% - 40px);
+    background: radial-gradient(circle at center, #2e405e 0%, #151e2e 100%);
+    /* background-image: url("assets/STP_wallpaper.png"); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden; /* Absolute safety check */
+}
+
+.screen-frame {
+    width: 100%;
+    height: 100%;
+    border: none;      /* Removes the default 2px border that causes overflow */
+    display: block;    /* Removes the 'inline' white-space gap at the bottom */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- TASKBAR --- */
+#taskbar {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 40px;
+    background: linear-gradient(90deg, var(--color-100) 0%, var(--color-200) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 100;
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+/* Start Button */
+#start-btn {
+    height: 32px;
+    width: 32px;
+    background: var(--color-main);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+#start-btn:hover { transform: scale(1.05); }
+#start-btn i { color: var(--bg-overlay); font-size: 14px; }
+
+/* Clock */
+#clock {
+    color: var(--color-deep);
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+/* --- START MENU --- */
+#start-menu {
+    position: absolute;
+    bottom: 40px; /* Above taskbar */
+    left: 0;
+    width: 250px;
+    background: var(--bg-overlay); 
+    display: flex; /* Hidden by default via JS toggle usually, but visible for now */
+    flex-direction: column;
+    padding: 10px 0;
+    transform-origin: bottom left;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Hidden State */
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+}
+
+#start-menu.open {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--color-dark);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu-item:hover {
+    background: rgba(233, 30, 99, 0.1);
+    border-left: 4px solid var(--color-dark);
+    padding-left: 16px; /* Offset for border */
+}
+
+.menu-item i {
+    width: 25px;
+    text-align: center;
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+/* --- WINDOWS (CONTENT AREA) --- */
+.window {
+    position: absolute;
+    top: 10%; left: 20%;
+    width: 600px; height: 450px;
+    background: var(--bg-overlay);
+    color: #333;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    z-index: 10;
+}
+
+.window.active { display: flex; animation: popIn 0.2s ease-out; }
+
+.window-header {
+    background: var(--color-200);
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: var(--color-deep);
+    cursor: move; /* Hints draggable */
+}
+
+.close-btn { cursor: pointer; }
+.window-content { padding: 20px; overflow-y: auto; line-height: 1.6;}
+
+/* Toolbar inside the window */
+.inner-toolbar {
+    display: flex;
+    background: var(--color-100);
+    border-bottom: 1px solid var(--color-200);
+    padding: 5px 10px;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-dark);
+    padding: 5px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+.tab-btn:hover { background: var(--color-glass); }
+
+/* Tab logic */
+.tab-content { display: none; color: var(--text-caption-color); padding-top: 15px; }
+.tab-content.active { display: block !important; }
+.tab-btn.active {
+    background-color: var(--color-main) !important;
+    color: var(--text-button-color) !important;
+}
+
+/* News List Layout */
+.news-header-area {
+    color: var(--color-dark);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--color-main);
+    padding-left: 15px;
+}
+
+.news-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-overlay);
+    border: 1px solid var(--color-200);
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.news-card:hover {
+    transform: translateX(5px);
+    border-color: var(--color-main);
+    background: var(--bg-overlay);
+    box-shadow: 2px 2px 10px rgba(233, 30, 99, 0.1);
+}
+
+.news-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-title {
+    font-weight: bold;
+    color: var(--color-dark);
+    font-size: 1.1rem;
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+.news-card i {
+    color: var(--color-200);
+    transition: color 0.2s;
+}
+
+.news-card:hover i {
+    color: var(--color-main);
+}
+
+.back-btn {
+    background: var(--color-100);
+    border: 1px solid var(--color-200);
+    color: var(--color-dark);
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: var(--color-main);
+    color: var(--text-button-color);
+}
+
+.meta-date { font-size: 0.9rem; color: #666; font-style: italic; }
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.art-collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Fixed Square Thumbnail */
+.art-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden; /* This cuts the image */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.art-preview:hover {
+    transform: scale(1.03);
+    border-color: var(--color-main);
+}
+
+.art-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This centers and crops the image */
+}
+
+/* --- LIGHTBOX OVERLAY --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(40, 44, 52, 0.9); /* Gray/Dark filter */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out;
+}
+
+.modal-container {
+    text-align: center;
+    max-width: 80%;
+}
+
+#modal-img {
+    max-width: 100%;
+    max-height: 80vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+#modal-caption {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}

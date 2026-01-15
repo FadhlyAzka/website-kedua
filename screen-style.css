@@ -1,0 +1,164 @@
+/* --- RESET FOR SCREEN ONLY --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    margin: 0;
+    padding: 40px 0;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+}
+
+/* --- THE VISUALS --- */
+/* Wrapper to center everything */
+.dialogue-wrapper {
+    position: relative;
+    overflow: visible;   /* ALLOW name-tag to render */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Main textbox */
+.textbox {
+    position: relative;
+    width: 700px;          /* HARD LOCK */
+    height: 200px;
+    max-width: 700px;
+    min-width: 700px;
+
+    background: #000;
+    border: 2px solid #cfcfcf;
+    padding: 30px 50px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: block;        /* IMPORTANT: remove flex sizing effects */
+}
+
+.name-tag {
+    position: absolute;
+    top: 5px;
+    padding: 6px 2px;
+    background: #000;
+    border: transparent;
+    color: #c44b4b;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.photo-box {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #cfcfcf;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.text-content {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+.right {
+    padding: 30px 50px;
+}
+.right .photo-box {
+    right: 15px;
+    top: 40px;
+}
+.right .name-tag {
+    right: 20px;
+}
+.right .text-content {
+    width: calc(100% - 110px); /* photo + padding space */
+    min-width: calc(100% - 110px);
+    max-width: calc(100% - 110px);}
+
+/* --- LOCK DIALOGUE TEXT AREA --- */
+/* Keep the text animating inside a fixed area so the box never resizes */
+#dialogue-text {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;      /* Text scrolls instead of pushing the box bigger */
+    padding-right: 10px;   /* Room for scrollbar */
+}
+
+#dialogue-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+#dialogue-text::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+#dialogue-text::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 4px;
+}
+
+/* --- NEW STYLES FOR CHOICE LIST --- */
+#choice-box {
+    /* We ensure the box itself doesn't scroll, but its content does */
+    overflow: hidden;
+}
+
+#choice-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Scroll ONLY inside this container */
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+#choice-content ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+#choice-content li {
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#choice-content li:hover {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* Custom Scrollbar Styling (Optional, matches your theme) */
+#choice-content::-webkit-scrollbar {
+    width: 8px;
+}
+#choice-content::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+#choice-content::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 4px;
+}
+
+/* Choice Item Styling */
+.choice-item {
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: color 0.2s;
+}
+
+.choice-item:hover {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+}

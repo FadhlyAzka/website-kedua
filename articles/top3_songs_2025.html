@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Articles - The Top 3 Songs of 2025</title>
+    <style>
+        body {
+            background: #0f0f0f;
+            font-family: "Inter", system-ui, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 40px;
+        }
+
+        /* SINGLE COLUMN GRID */
+        .song-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .song-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .song-card {
+            position: relative;
+            display: flex;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .song-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+        }
+
+        /* THUMBNAIL */
+        .song-card img {
+            width: 280px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        /* INFO AREA */
+        .song-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 18px 22px;
+        }
+
+        .song-info h3 {
+            margin: 0 0 8px;
+            font-size: 1.25rem;
+            color: #eaeaea;
+        }
+
+        .song-info .artist,
+        .song-info .date {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin: 0 0 4px;
+        }
+
+        /* RANK BADGE (UNCHANGED STYLE) */
+        .rank {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            z-index: 2;
+        }
+
+        .genre {
+            font-size: 0.85rem;
+            color: #8f8f8f;
+            margin: 4px 0 10px;
+        }
+
+        .stream-links {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .stream-links a {
+            color: #bfbfbf;
+            font-size: 1.2rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .stream-links a:hover {
+            color: white;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="song-grid">
+        <div class="song-card">
+            <span class="rank">1</span>
+            <img src="https://img.youtube.com/vi/stxNWAF1SI4/maxresdefault.jpg" alt="Song thumbnail">
+            <div class="song-info">
+                <h3>Delete</h3>
+                <p class="artist">Ninajirachi</p>
+                <p class="date">Released: 7 Agustus</p>
+                <p class="genre">EDM · Electro Pop · Hyperpop</p>
+    
+                <div class="stream-links">
+                    <a href="https://www.youtube.com/watch?v=stxNWAF1SI4" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://open.spotify.com/track/0CVbCtcdXAIw00YBXXbneu" target="_blank">
+                        <i class="fa-brands fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="song-card">
+            <span class="rank">2</span>
+            <img src="https://img.youtube.com/vi/xtRVa4kOBt4/maxresdefault.jpg" alt="Song thumbnail">
+            <div class="song-info">
+                <h3>iPod Touch</h3>
+                <p class="artist">Ninajirachi</p>
+                <p class="date">Released: 7 Agustus</p>
+                <p class="genre">EDM · Electro Pop · Hyperpop</p>
+    
+                <div class="stream-links">
+                    <a href="https://www.youtube.com/watch?v=xtRVa4kOBt4" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://open.spotify.com/track/0CVbCtcdXAIw00YBXXbneu" target="_blank">
+                        <i class="fa-brands fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="song-card">
+            <span class="rank">3</span>
+            <img src="https://img.youtube.com/vi/jeVbKwPtL_0/maxresdefault.jpg" alt="Song thumbnail">
+            <div class="song-info">
+                <h3>Colorful Array</h3>
+                <p class="artist">Neuro-sama</p>
+                <p class="date">Released: 20 Desember</p>
+                <p class="genre">Pop · Vocaloid · Synthwave</p>
+            
+                <div class="stream-links">
+                    <a href="https://www.youtube.com/watch?v=jeVbKwPtL_0" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://open.spotify.com/track/58bS6jkTx9cYzrcqpuKp9I" target="_blank">
+                        <i class="fa-brands fa-spotify"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

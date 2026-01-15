@@ -1,0 +1,325 @@
+<div class="inner-toolbar">
+  <button class="tab-btn active" onclick="switchTab('interest')">Interest</button>
+  <button class="tab-btn" onclick="switchTab('fav')">Favorite Media</button>
+  <button class="tab-btn" onclick="switchTab('entertain')">Entertainment</button>
+</div>
+
+<div id="interest" class="tab-content active">
+  <p><b>Sebagai <i>self-proclaimed constant learner</i></b>, saya membuka diri ke berbagai topik pengetahuan yang belum kujangkau dan belum dikuasai</p>
+  <ul style="margin:4px 0 0 30px; padding:0;">
+    <li>Filsafat, Sejarah, Fisika, Matematika, Psikologi maupun Teologi</li>
+  </ul>
+  <br>
+
+  <h3>DESIGN</h3>
+  <p>Beberapa karya berupa design dari poster-poster yang dirancang menggunakan Figma. Untuk penyajian data statistik (infografis), biasanya memakai Canva</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+    <span style="display: inline-block; padding: 10px 16px; background: var(--color-200); color: var(--text-button-color); border-radius: 14px; font-weight: 500;">Figma</span>
+    <span style="display: inline-block; padding: 10px 16px; background: var(--color-200); color: var(--text-button-color); border-radius: 14px; font-weight: 500;">Canva</span>
+    <span style="display: inline-block; padding: 10px 16px; background: var(--color-200); color: var(--text-button-color); border-radius: 14px; font-weight: 500;">Affinity</span>
+  </div>
+  <br/>
+
+  <h3>MENULIS</h3>
+  <p>Bukan diary, melainkan sering menulis beberapa cerpen yang memiliki tema lumayan essentrik namun kohesif dan terstruktur</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+    <span style="display: inline-block; padding: 10px 16px; background: var(--color-200); color: var(--text-button-color); border-radius: 14px; font-weight: 500;">Notion</span>
+  </div>
+  <br/>
+  
+  <h3>MEMBACA</h3>
+  <p>Selera eklektik yang dibangun berdasarkan beragam pengalaman emosional dan tematik yang terkesan tak terduga dari berbagai genre/demografi maupun medium. </p>
+</div>
+
+<div id="fav" class="tab-content">
+  <h2>5 Favorite Movies</h2>
+  <p> <i>A story where it deeply troubled by the state of the confusing world but has fiercely held onto a core of hope and a belief in what is truly beautiful even if it's fragile.</i> </p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdCDiGjaAVYgcHBlGOTX52DGGU-NNWDhIYcg&s"
+    style="width: 80px; height: 106.18px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsn88oRVe_lwFaAlgMXZ0kaodBIxz8s1x2cw&s"
+    style="width: 80px; height: 106.18px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6gMTs91JLPBNfCSWO9rIIzTiElz95on-jPw&s"
+    style="width: 80px; height: 106.18px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQBAy4qLFWfpl78TOg-OVGm6RG4MBT32bb6g&s"
+    style="width: 80px; height: 106.18px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpIIv2gv-3acZxOxIixsaZiwi-95K62OaiaQ&s"
+    style="width: 80px; height: 106.18px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+  </div>
+  <br/><br/>
+  
+  <h2>3 Favorite Games</h2>
+  <p> <i>A game.</i> </p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <img 
+    src="https://m.media-amazon.com/images/M/MV5BOTFhZTM4YjgtYTRmNy00NTU1LWI5NjUtNGZmZmE5Mjk0MmRjXkEyXkFqcGc@._V1_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px; cursor: pointer; transition: transform 0.2s;"
+    alt="Slay The Princess"
+    onclick="loadStoryPath('curiouspath')"
+    onmouseover="this.style.transform='scale(1.05)'"
+    onmouseout="this.style.transform='scale(1)'"
+    >
+    <img 
+    src="https://m.media-amazon.com/images/M/MV5BYjgzNzA4N2UtMDgzOC00N2RiLTg3ZTYtNGYwNTc0MDEzMjEwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/M/MV5BOWVhZTljNjEtZGVjOC00MThjLWFiMDctNWUwMDYxMjk0MzZjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+  </div>
+  <br/><br/>
+  
+  <h2>5 Favorite Animes</h2>
+  <p> <i>An anime.</i> </p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <img 
+    src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/M/MV5BMzNiODA5NjYtYWExZS00OTc4LTg3N2ItYWYwYTUyYmM5MWViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/M/MV5BMDJmZGZmNjQtMzE4NS00ZGRmLWFiMTQtM2EzZDhhZGNkY2FmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/M/MV5BZjZmNjg3ZjMtZjQ0MS00NDE0LWE0MDctZTBjMDZiMWZhZTk3XkEyXkFqcGc@._V1_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://i.pinimg.com/736x/e9/59/1e/e9591ed4c5ac666d1c6f3a89052fea5f.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+  </div>
+  <br/><br/>
+  
+  <h2>4 Favorite Mangas</h2>
+  <p> <i>A manga.</i> </p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <img 
+    src="https://m.media-amazon.com/images/I/518miLpsBML._AC_UF1000,1000_QL80_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/I/91RQPtc4qdL._UF1000,1000_QL80_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/I/81TtUyi-EOL._AC_UF1000,1000_QL80_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/I/81o5PzBqz3L._AC_UF894,1000_QL80_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+  </div>
+  <br/><br/>
+  
+  <h2>3 Favorite Novel</h2>
+  <p> <i>A novel.</i> </p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <img 
+    src="https://m.media-amazon.com/images/I/81IE8AwMvqL._AC_UF1000,1000_QL80_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://m.media-amazon.com/images/I/81W5cgvyKbL._UF1000,1000_QL80_.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+    <img 
+    src="https://s3-ap-southeast-1.amazonaws.com/ebook-previews/40678/143505/1.jpg"
+    style="width: 80px; height: 120px; object-fit: cover; border-radius: 2px;"
+    alt=""
+    >
+  </div>
+  <br/><br/>
+</div>
+
+<div id="entertain" class="tab-content">
+  <h2>3 YouTube Gamers</h2>
+  <p>A gamers that I willingly watch the playthrough of game I want to watch.</p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <a href="https://www.youtube.com/@Miawaug">
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_mSbnFYfbTrCOowzP5KOX4mUH-_Qe4EMixGqcvexpPcnZQ=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@Neurosama">
+    <img src="https://yt3.googleusercontent.com/VsXeCJuSsG3X0sEGzydlHe90mdK8A2-7nhDssAcdxLhMV5CLPHSj9YNnPTa2pR5EZbIciBrMEQ=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@eurobrady">
+    <img src="https://yt3.googleusercontent.com/1GMxx2otENoEURpbaabY2ClzC8cnENqSq0EaJKIPsJifv-6vkGN6cNVW5KhJNmtCzIP6Qn1e=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+  </div>
+  <br/>
+  
+  <h2>Science Folk</h2>
+  <p>A youtube channel with premium content of Physics or Science.</p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <a href="https://www.youtube.com/@QuantaScienceChannel">
+    <img src="https://yt3.googleusercontent.com/Kz6zpxMLaKVZeqMel-Q9Udy1KBbWhj58p7Ro5xxPHsVgzCHmXjc0gOK28_fOrlgeGwyDEVE2zg=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@ScienceClicEN">
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_npe9hjG5LPQM0AR98D3fQmho_yLDA6piPpfnRFjeyW0g=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@veritasium">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYtBzHvnr8XUrcqbXaw7YBV4tfUfBUjzvQ3Q&s"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@braintruffle">
+    <img src="https://yt3.googleusercontent.com/fBsSuMc6lU6YecP918X5zD7HnLy7lQsYAsyjaSBZSKLUCkroil3LpJu0NckJ7yHBpuZ7_eLO=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@RumahEditor">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-4K-_e6TabMa5gpPhJLDDTD9EjywYuKwdbA&s"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+  </div>
+  <br/>
+  
+  <h2>Math Nerd</h2>
+  <p>A youtube channel with premium content of Math using animation.</p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <a href="https://www.youtube.com/@3blue1brown">
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_nFzZFPLxPZRHcE3SSwzdrbuWqfoWYwLAu0_2iO6blQYAU=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@twoswap">
+    <img src="https://yt3.googleusercontent.com/rVBD4hhq0_7eRPwkOkyCreFtoY2Sbx7wowBB02okCSkJoQ5LDlUv9x6uZKmqyIeIaGQNg93u=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@WelchLabsVideo">
+    <img src="https://yt3.googleusercontent.com/RFCKJgHcSbN14fHQn-Xhwzch3xgbwxh15edMdiYZbslxMrU-Y-gFEOPGdIy3Cot0oVAr8E0Dow=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@PrimerBlobs">
+    <img src="https://yt3.googleusercontent.com/YicJ3lAVdXC5jI7SA7mnX7pPoULN2Gfgh_S4IgDPDPjLaeTx1vWiQeh-reCty2uWuoVK70K5Lg=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@DrZye">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2TyTGDTXOzY7kTo9s_w18gmVKCBYRos7kXA&s"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+  </div>
+  <br/>
+  
+  <h2>3D Essay Storyteller</h2>
+  <p>A youtube channel with premium version of essay video with full-3D animation & compelling storytelling.</p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <a href="https://www.youtube.com/@fern-tv">
+    <img src="https://yt3.googleusercontent.com/7Pztg8I_KJBkX9XhWnQRQNmulnqCI6KEkSpWX5qYuzZiSoDv4QT7MiEu4XcCQQNBPcrUX1ko=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@primalspace">
+      <img src="https://yt3.googleusercontent.com/avxXn19bwuKRqUvlu07ffZl5-DGqcTpzZ-BqEqqKoPWOy-hqTHgVCHt6ViaobEv7cqHWTwUE=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@hoog-youtube">
+      <img src="https://yt3.googleusercontent.com/sZBlnPBDaAztZjM1pwfvOJjj0L0lLckM2fP3NwOf3ZhiLo7OsS0PbH2jzaBkSXvpJtgeC2YZ=s900-c-k-c0x00ffffff-no-rj"
+      style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+      alt=""
+      ></a>
+    <a href="https://www.youtube.com/@solveyoutube">
+    <img src="https://yt3.googleusercontent.com/JEuV7PwF9QMaadW6Zr8lJrec2APa-breLlQY1Ufnz8TCpUJ3jxbEXgIQFxYbz00aKlf_RLSlftI=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@sisilainfilm">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEsu4dWJfADxO45uDbHfnVIG_h1KpsJ8QadA&s"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+  </div>
+  <br/>
+  
+  <h2>Mystery Collection</h2>
+  <p>A YouTube channel with a various mystery content from any kind of eras and places.</p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <a href="https://www.youtube.com/@Nexpo">
+    <img src="https://yt3.googleusercontent.com/b9z-LrY5p97i8JlkOjGY0B2wdrUX79zD-mZcSkfEuY7drXXXQCEQDNkxvywbIVgpzxC2kS1sDQ=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@Brew">
+      <img src="https://yt3.googleusercontent.com/ytc/AIdro_mz61vTTKVoRPGAc-EyIuJ94mDATIsq95mq84uHrQZNZlc=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@unpred.ictable">
+    <img src="https://yt3.googleusercontent.com/lRAAmHGBJY1MU1EyhZcCEwTQPIJzrfzUAJr1qYB0sq56Sc2V2w3en8ZNWJFzANwP389ZQD87=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+  </div>
+  <br/>
+  
+  <h2>Animator</h2>
+  <p>A YouTube channel that the artist tell an experience with their style of animation.</p>
+  <div style="display: flex; justify-content: left; align-items: self-start; flex-wrap: wrap; background-color: transparent; width: 450px; height: 80px; padding: 0; gap: 10px; margin-top: 8px;">
+    <a href="https://www.youtube.com/@Daidus">
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_nVeiBrioeV6PVD0O8iQ08cLopnUEP8-uRetzimQut01ng=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@shar">
+    <img src="https://yt3.googleusercontent.com/ytc/AIdro_lmVY_gaKbTk4zN2Vffj3wuNCcZC2ScvTFxG2d4BmY8RA=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+    <a href="https://www.youtube.com/@FergieJnx">
+    <img src="https://yt3.googleusercontent.com/MTGflHcfD3Xr9SJ6jIT1KoBy5WhIzQiWG12GE5NLdtM30ouX5bQ280HDITwqWO6lwerlAFgJbQI=s900-c-k-c0x00ffffff-no-rj"
+    style="width: 70px; height: 70px; object-fit: cover; border-radius: 50%;"
+    alt=""
+    ></a>
+  </div>
+  <br/>
+</div>
